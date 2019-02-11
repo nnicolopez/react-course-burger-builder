@@ -8,13 +8,6 @@
     font-size: 2rem;
 }
 
-
-
-
-// 1000px/16px => 62.5em
-// 700px/16px => 43.75em
-// 500px/16px => 31.25em
-// 400px/16px => 25em
 @media (min-width: 31.25em) and (max-height: 25em) {
     .Burger {
         width: 35rem;

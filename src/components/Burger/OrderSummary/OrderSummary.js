@@ -1,5 +1,6 @@
 import React from 'react'
 
+import classes from './OrderSummary.module.scss';
 import Button from '../../UI/Button/Button';
 
 const orderSummary = (props) => {
@@ -17,7 +18,7 @@ const orderSummary = (props) => {
         <>
             <h3>Your Order</h3>
             <p>A delicious burger with the following ingredients:</p>
-            <ul>
+            <ul className={classes.OrderSummary__list}>
                 {ingredientSummary}
             </ul>
             <p>Continue to Checkout</p>
