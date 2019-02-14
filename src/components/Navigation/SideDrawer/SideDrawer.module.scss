@@ -1,0 +1,28 @@
+.SideDrawer {
+    position: fixed;
+    width: 28rem;
+    max-width: 70%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    background-color: #fff;
+    padding: 3.2rem 1.6rem;
+    transition: transform .3s ease-out;
+
+    @media only screen and (min-width: 31.25em) {
+        display: none;
+    }
+}
+
+.Open {
+    transform: translateX(0);
+}
+
+.Close {
+    transform: translateX(-100%);
+}
+
+.LogoBox {
+    height: 11%;
+}
