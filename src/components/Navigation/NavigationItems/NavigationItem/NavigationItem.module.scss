@@ -1,24 +1,45 @@
 .NavigationItem {
-    display: flex;
-    height: 100%;
-    align-items: center;
+    margin: 1rem 0;
+    display: block;
+    width: 100%;
 
     a {
-        color: #fff;
+        color: #8f5c2c;
         text-decoration: none;
-        cursor: pointer;
-        height: 100%;
-        padding: 1.6rem 1rem;
-        border-bottom: 4px solid transparent;
+        width: 100%;
         display: block;
-        transition: all .2s;
     }
 
     a:hover,
     a:active,
     a.active {
-        background-color: #8f5c2c;
-        border-bottom: 4px solid #40a4c8;
-        color: #fff;
+        color: #40a4c8;
     }
+}
+
+@media only screen and (min-width: 31.25em) {
+    .NavigationItem {
+        display: flex;
+        height: 100%;
+        width: auto;
+        align-items: center;
+    
+        a {
+            color: #fff;
+            cursor: pointer;
+            height: 100%;
+            width: auto;
+            padding: 1.6rem 1rem;
+            border-bottom: 4px solid transparent;
+            transition: all .2s;
+        }
+    
+        a:hover,
+        a:active,
+        a.active {
+            background-color: #8f5c2c;
+            border-bottom: 4px solid #40a4c8;
+            color: #fff;
+        }
+    }   
 }

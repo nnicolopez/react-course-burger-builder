@@ -20,3 +20,9 @@
 .LogoBox {
     height: 80%;
 }
+
+@media only screen and (max-width: 499px) {
+    .DesktopOnly {
+        display: none;
+    }
+}
