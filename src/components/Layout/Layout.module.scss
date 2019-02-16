@@ -1,5 +1,10 @@
 .Content {
     margin-top: 7.6rem;
+    height: calc(100vh - 7.6rem);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 
