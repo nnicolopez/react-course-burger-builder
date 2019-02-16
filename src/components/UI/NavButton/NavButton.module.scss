@@ -1,0 +1,33 @@
+.NavButton {
+    height: 4rem;
+    width: 4rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__icon {
+        position: relative;
+
+        &,
+        &::before,
+        &::after {
+            width: 3rem;
+            height: 2px;
+            background-color: #000;
+            display: inline-block;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            transition: all .2s;
+        }
+
+        &::before { top: -.8rem; }
+        &::after { top: .8rem; }
+
+    }
+}
