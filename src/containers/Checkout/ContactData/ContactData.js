@@ -22,7 +22,11 @@ class ContactData extends Component {
                         {value: 'cheapest', displayValue: 'Cheapest'}
                     ]
                 },
-                value: 'fastest'
+                value: 'fastest',
+                validation: {
+                    required: true
+                },
+                valid: false
             }
         },
         loading: false
@@ -35,7 +39,11 @@ class ContactData extends Component {
                 type: type,
                 placeholder: placeholder
             },
-            value: value
+            value: value,
+            validation: {
+                required: true
+            },
+            valid: false
         }
     }
 
@@ -61,11 +69,21 @@ class ContactData extends Component {
             });
     }
 
+    checkValidity(value, rules) {
+        let isValid = false;
+        if (rules.required) {
+            isValid = value.trim() !== '';
+        }
+        return isValid;
+    }
+
     inputChangedHandler = (event, inputIdentifier) => {
         const orderForm = {...this.state.orderForm};
         const formElem = {...orderForm[inputIdentifier]}
         formElem.value = event.target.value;
+        formElem.valid = this.checkValidity(formElem.value, formElem.validation)
         orderForm[inputIdentifier] = formElem;
+        console.log(formElem);
         this.setState({orderForm});
     }
 
