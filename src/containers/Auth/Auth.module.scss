@@ -1,0 +1,9 @@
+.Auth {
+    margin: 2rem auto;
+    width: 80%;
+    text-align: center;
+
+    @media only screen and (min-width: 37.5em) {
+        width: 50rem;
+    }
+}
