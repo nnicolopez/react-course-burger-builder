@@ -57,7 +57,7 @@ class ContactData extends Component {
             price: this.props.price,
             orderData: orderData
         }
-        
+
         this.props.onOrderBurger(order);
     }
 
@@ -103,15 +103,15 @@ class ContactData extends Component {
                 id: key,
                 config: this.state.orderForm[key]
             });
-        }        
+        }
 
         let form = (
             <form onSubmit={this.orderHandler}>
                 {formElementsArray.map(formElem => (
-                    <Input 
+                    <Input
                         key={formElem.id}
-                        elementType={formElem.config.elementType} 
-                        elementConfig={formElem.config.elementConfig} 
+                        elementType={formElem.config.elementType}
+                        elementConfig={formElem.config.elementConfig}
                         value={formElem.config.value}
                         valid={formElem.config.valid}
                         shouldValidate={formElem.config.validation}
@@ -135,9 +135,9 @@ class ContactData extends Component {
 
 const mapStateToProps = state => {
     return {
-        ings: state.ingredients,
-        price: state.totalPrice,
-        loading:state.loading
+        ings: state.burgerBuilder.ingredients,
+        price: state.burgerBuilder.totalPrice,
+        loading:state.order.loading
     }
 }
 
