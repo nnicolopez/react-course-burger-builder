@@ -8,6 +8,8 @@ import Button from '../../../components/UI/Button/Button';
 import Spinner from '../../../components/UI/Spinner/Spinner';
 import Input from '../../../components/UI/Input/Input';
 import * as actions from '../../../store/actions/index';
+import { updateObject } from '../../../shared/util';
+
 class ContactData extends Component {
     state = {
         orderForm: {
@@ -82,12 +84,20 @@ class ContactData extends Component {
     }
 
     inputChangedHandler = (event, inputIdentifier) => {
-        const orderForm = {...this.state.orderForm};
-        const formElem = {...orderForm[inputIdentifier]};
-        formElem.value = event.target.value;
-        formElem.valid = this.checkValidity(formElem.value, formElem.validation);
-        formElem.touched = true;
-        orderForm[inputIdentifier] = formElem;
+        // const orderForm = {...this.state.orderForm};
+        // const formElem = {...orderForm[inputIdentifier]};
+        const formElem = updateObject(orderForm[inputIdentifier], {
+            value: event.target.value,
+            valid: this.checkValidity(event.target.value, this.state.orderForm.validation),
+            touched: true
+        });
+        const orderForm = updateObject(this.state.orderForm, {
+            [inputIdentifier]: formElem
+        })
+        // formElem.value = event.target.value;
+        // formElem.valid = this.checkValidity(formElem.value, formElem.validation);
+        // formElem.touched = true;
+        // orderForm[inputIdentifier] = formElem;
 
         let formIsValid = true;
         for (let inputIdentifier in orderForm) {
