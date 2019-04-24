@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import Order from '../../components/Order/Order';
@@ -7,10 +7,11 @@ import errorHandler from '../../hoc/ErrorHandler/ErrorHandler';
 import * as actions from '../../store/actions/index';
 import Spinner from '../../components/UI/Spinner/Spinner';
 
-const orders = (props) => {
+const orders = props => {
   useEffect(() => {
     props.onFetchOrders(props.token, props.userId);
   }, [])
+  
   let orders = <Spinner />;
   if (!props.loading) {
     orders = (
@@ -22,6 +23,7 @@ const orders = (props) => {
       ))
     );
   }
+
   return (
     <div>
       {orders}

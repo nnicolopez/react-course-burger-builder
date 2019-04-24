@@ -5,7 +5,7 @@ import CheckoutSummary from '../../components/Order/CheckoutSummary/CheckoutSumm
 import ContactData from './ContactData/ContactData';
 import { connect } from 'react-redux';
 
-const checkout = (props) => {
+const checkout = props => {
   const checkoutCancelledHandler = () => {
     props.history.goBack();
   }
