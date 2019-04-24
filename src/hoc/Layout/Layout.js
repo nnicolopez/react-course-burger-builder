@@ -5,7 +5,7 @@ import classes from './Layout.module.scss';
 import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
 
-const layout = (props) => {
+const layout = props => {
   const [showSideDrawer, setShowSideDrawer] = useState(false)
 
   return (
@@ -16,7 +16,7 @@ const layout = (props) => {
       <SideDrawer
         isAuth={props.isAuthenticated}
         open={showSideDrawer}
-        closed={() => setShowSideDrawer(!showSideDrawer)} />
+        closed={() => setShowSideDrawer(false)} />
       <main className={classes.Content}>
         {props.children}
       </main>
