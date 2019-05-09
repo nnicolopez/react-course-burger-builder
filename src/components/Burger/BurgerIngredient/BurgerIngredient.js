@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import classes from './BurgerIngredient.module.scss';
 
-const burgerIngredient = (props) => {
+const burgerIngredient = props => {
   let ingredient = null;
   
   switch (props.type) {

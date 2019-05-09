@@ -3,7 +3,7 @@ import React, { useMemo } from 'react';
 import classes from './Modal.module.scss';
 import Backdrop from '../Backdrop/Backdrop';
 
-const modal = (props) =>  {
+const modal = props =>  {
 
   return useMemo(() => (
     <>
