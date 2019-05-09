@@ -10,8 +10,9 @@ import errorHandler from '../../hoc/ErrorHandler/ErrorHandler';
 import * as actions from '../../store/actions';
 import axios from '../../axios-orders';
 
-export const burgerBuilder = (props) => {
+export const burgerBuilder = props => {
   const [purchasing, setPurchasing] = useState(false);
+  
   useEffect(() => {
     props.onInitIngredients();
   }, []);
